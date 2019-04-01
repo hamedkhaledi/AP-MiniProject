@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminPageController">
+    <children>
+        <TabPane prefHeight="650.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Profile">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox layoutX="131.0" layoutY="190.0" prefHeight="160.0" prefWidth="188.0">
+                                    <children>
+                                        <TextField fx:id="PreviousUsernameFiled" prefHeight="31.0" prefWidth="188.0" promptText="previous Username" />
+                                        <PasswordField fx:id="PreviousPasswordFiled" prefHeight="31.0" prefWidth="188.0" promptText="Previous Password" />
+                                        <TextField fx:id="NewUsernameFiled" prefHeight="31.0" prefWidth="188.0" promptText="New Usrename" />
+                                        <PasswordField fx:id="NewPasswordFiled" prefHeight="33.0" prefWidth="188.0" promptText="New Password" />
+                                        <PasswordField fx:id="RepeatPasswordFiled" prefHeight="29.0" prefWidth="188.0" promptText="New Password" />
+                                    </children>
+                                </VBox>
+                                <Button fx:id="SubmitButton" layoutX="199.0" layoutY="437.0" mnemonicParsing="false" onAction="#SubmitClick" text="submit" />
+                                <Label fx:id="WrongLabel" layoutX="131.0" layoutY="377.0" text="Label" visible="false" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Dining">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label layoutX="100.0" layoutY="120.0" text="Saturday" />
+                                <Label layoutX="100.0" layoutY="200.0" text="Sunday" />
+                                <Label layoutX="100.0" layoutY="280.0" text="Monday" />
+                                <Label layoutX="100.0" layoutY="360.0" text="Tuesday" />
+                                <Label layoutX="100.0" layoutY="440.0" text="Wednesday" />
+                                <VBox layoutX="185.0" layoutY="100.0" prefHeight="50.0" prefWidth="149.0">
+                                    <children>
+                                        <TextField fx:id="SaturdayFood1" promptText="Food 1" />
+                                        <TextField fx:id="SaturdayFood2" promptText="Food 2" />
+                                    </children>
+                                </VBox>
+                                <VBox layoutX="185.0" layoutY="440.0" prefHeight="50.0" prefWidth="149.0">
+                                    <children>
+                                        <TextField fx:id="SundayFood1" promptText="Food 1" />
+                                        <TextField fx:id="SundayFood2" promptText="Food 2" />
+                                    </children>
+                                </VBox>
+                                <VBox layoutX="185.0" layoutY="355.0" prefHeight="50.0" prefWidth="149.0">
+                                    <children>
+                                        <TextField fx:id="MondayFood1" promptText="Food 1" />
+                                        <TextField fx:id="MondayFood2" promptText="Food 2" />
+                                    </children>
+                                </VBox>
+                                <VBox layoutX="185.0" layoutY="270.0" prefHeight="50.0" prefWidth="149.0">
+                                    <children>
+                                        <TextField fx:id="TuesdayFood1" promptText="Food 1" />
+                                        <TextField fx:id="TuesdayFood2" promptText="Food 2" />
+                                    </children>
+                                </VBox>
+                                <VBox layoutX="185.0" layoutY="185.0" prefHeight="50.0" prefWidth="149.0">
+                                    <children>
+                                        <TextField fx:id="WednesdayFood1" promptText="Food 1" />
+                                        <TextField fx:id="WednesdayFood2" promptText="Food 2" />
+                                    </children>
+                                </VBox>
+                                <Button layoutX="233.0" layoutY="551.0" mnemonicParsing="false" onAction="#DiningSubmitClick" text="Submit" underline="true" />
+                                <Label fx:id="DiningLabel" layoutX="106.0" layoutY="517.0" text="Label" visible="false" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Library">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox layoutX="132.0" layoutY="137.0" prefHeight="94.0" prefWidth="188.0">
+                                    <children>
+                                        <TextField fx:id="BookNameField" prefHeight="31.0" prefWidth="188.0" promptText="Book Name" />
+                                        <PasswordField fx:id="AuthorNameField" prefHeight="31.0" prefWidth="188.0" promptText="Author Name" />
+                                        <TextField fx:id="PublisherSNameField" prefHeight="31.0" prefWidth="188.0" promptText="Publisher Name" />
+                                    </children>
+                                </VBox>
+                                <Button fx:id="GiveButton" layoutX="205.0" layoutY="453.0" mnemonicParsing="false" onAction="#GiveButtonClick" text="Give" visible="false" />
+                                <TextField fx:id="LibraryStudentUsername" layoutX="246.0" layoutY="298.0" promptText="Student UserName" visible="false" />
+                                <CheckBox fx:id="GiveToCheckBox" layoutX="72.0" layoutY="302.0" mnemonicParsing="false" onAction="#GiveToCheckBoxClick" text="Give to" />
+                                <CheckBox fx:id="CancelReservationCheckBox" layoutX="73.0" layoutY="349.0" mnemonicParsing="false" onAction="#CancelReservationCheckBoxClick" text="Cancel reservation" />
+                                <Button fx:id="CompleteButton" layoutX="192.0" layoutY="453.0" mnemonicParsing="false" onAction="#CompleteButtonClick" text="Complete" visible="false" />
+                                <Label fx:id="LibraryWrongLabel" layoutX="88.0" layoutY="399.0" text="Label" visible="false" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
