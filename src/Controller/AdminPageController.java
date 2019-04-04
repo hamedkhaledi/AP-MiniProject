@@ -1,14 +1,16 @@
 package Controller;
 
 import Model.Admin;
+import Model.Book;
+import Model.ClassRoom;
 import Model.Food;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.util.concurrent.TimeoutException;
+
 public class AdminPageController {
-
-
     @FXML
     private TextField PreviousUsernameFiled;
     @FXML
@@ -119,7 +121,7 @@ public class AdminPageController {
     @FXML
     public TextField PublisherSNameField;
     @FXML
-    public PasswordField AuthorNameField;
+    public TextField AuthorNameField;
     @FXML
     public TextField BookNameField;
     @FXML
@@ -141,9 +143,39 @@ public class AdminPageController {
             LibraryWrongLabel.setText("Fill all elements");
             LibraryWrongLabel.setVisible(true);
         } else {
-            LibraryWrongLabel.setText("Complete");
-            LibraryWrongLabel.setVisible(true);
-            //ToDO
+            boolean flag = false;
+            for (int i = 0; i < Admin.Students.size(); i++) {
+                if (Admin.Students.get(i).Username.equals(LibraryStudentUsername.getText())) {
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag) {
+                boolean flag2 = false;
+                for (int i = 0; i < Book.Books.size(); i++) {
+                    if (Book.Books.get(i).Name.equals(BookNameField.getText())) {
+                        flag2 = true;
+                        break;
+                    }
+                }
+                if (!flag2) {
+                    LibraryWrongLabel.setText("Complete");
+                    LibraryWrongLabel.setVisible(true);
+                    Book Temp = new Book();
+                    Temp.AuthorName = AuthorNameField.getText();
+                    Temp.Name = BookNameField.getText();
+                    Temp.PublisherName = PublisherSNameField.getText();
+                    Temp.Owner = LibraryStudentUsername.getText();
+                    Temp.Resevration = true;
+                    Book.Books.add(Temp);
+                } else {
+                    LibraryWrongLabel.setText("This book exist in library");
+                    LibraryWrongLabel.setVisible(true);
+                }
+            } else {
+                LibraryWrongLabel.setText("This student does not exist");
+                LibraryWrongLabel.setVisible(true);
+            }
         }
     }
 
@@ -158,9 +190,22 @@ public class AdminPageController {
             LibraryWrongLabel.setText("Fill all elements");
             LibraryWrongLabel.setVisible(true);
         } else {
-            LibraryWrongLabel.setText("Complete");
-            LibraryWrongLabel.setVisible(true);
-            //ToDO
+            boolean flag2 = false;
+            for (int i = 0; i < Book.Books.size(); i++) {
+                if (Book.Books.get(i).Name.equals(BookNameField.getText())) {
+                    flag2 = true;
+                    Book.Books.get(i).Resevration = false;
+                    Book.Books.get(i).Owner = null;
+                    break;
+                }
+            }
+            if (!flag2) {
+                LibraryWrongLabel.setText("This book does not exist in library");
+                LibraryWrongLabel.setVisible(true);
+            } else {
+                LibraryWrongLabel.setText("Complete");
+                LibraryWrongLabel.setVisible(true);
+            }
         }
     }
 
@@ -196,6 +241,27 @@ public class AdminPageController {
             LibraryWrongLabel.setText("Disable Give To CheckBox ");
             LibraryWrongLabel.setVisible(true);
         }
+    }
+
+    @FXML
+    public TextArea UniversityTextArea;
+
+    public void ShowButtonClick(ActionEvent actionEvent) {
+        String Temp = "";
+        Temp = "Teachers: \n";
+        for (int i = 0; i < Admin.Teachers.size(); i++) {
+            Temp += Admin.Teachers.get(i).Username + '\n';
+            Temp += "Classes: { \n";
+            for (int j = 0; j < Admin.Teachers.get(i).classRooms.size(); j++) {
+                Temp += Admin.Teachers.get(i).classRooms.get(j).Name + '\n';
+            }
+            Temp += "} \n";
+        }
+        Temp += "Students: \n";
+        for (int i = 0; i < Admin.Students.size(); i++) {
+            Temp += Admin.Students.get(i).Username + '\n';
+        }
+        UniversityTextArea.setText(Temp);
     }
 }
 
