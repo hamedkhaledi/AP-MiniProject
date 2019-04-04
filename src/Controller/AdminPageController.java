@@ -31,7 +31,7 @@ public class AdminPageController {
         if (NewUsernameFiled.getText().isEmpty()) {
             WrongLabel.setText("Fill all items");
             WrongLabel.setVisible(true);
-        } else if (!Admin.getAdmin().UserName.equals(PreviousUsernameFiled.getText()) && !Admin.getAdmin().Password.equals(PreviousPasswordFiled.getText())) {
+        } else if (!Admin.UserName.equals(PreviousUsernameFiled.getText()) && !Admin.Password.equals(PreviousPasswordFiled.getText())) {
             WrongLabel.setText("Password Or Username does`nt match");
             WrongLabel.setVisible(true);
         } else if (NewPasswordFiled.getText().length() < 6) {
@@ -41,8 +41,8 @@ public class AdminPageController {
             WrongLabel.setText("Passwords do not equal");
             WrongLabel.setVisible(true);
         } else {
-            Admin.getAdmin().UserName = NewUsernameFiled.getText();
-            Admin.getAdmin().Password = NewPasswordFiled.getText();
+            Admin.UserName = NewUsernameFiled.getText();
+            Admin.Password = NewPasswordFiled.getText();
             WrongLabel.setText("Changing Profile completed");
             WrongLabel.setVisible(true);
         }
@@ -105,6 +105,9 @@ public class AdminPageController {
 
     }
 
+    /**
+     * Library
+     */
     @FXML
     public CheckBox GiveToCheckBox;
     @FXML

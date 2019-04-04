@@ -10,19 +10,21 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <GridPane alignment="center" hgap="10" maxHeight="650.0" maxWidth="450.0" minHeight="650.0" minWidth="450.0" prefHeight="650.0" prefWidth="450.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainPageController">
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-   </rowConstraints>
-   <children>
-      <Pane maxHeight="650.0" maxWidth="450.0" minHeight="650.0" minWidth="450.0" prefHeight="650.0" prefWidth="450.0">
-         <children>
-            <Button fx:id="SigninButton" layoutX="199.0" layoutY="442.0" mnemonicParsing="false" onAction="#ClickSigninPageButton" text="Sign in" />
-            <TextField fx:id="UsernameField" focusTraversable="false" layoutX="150.0" layoutY="313.0" promptText="Username" />
-            <PasswordField fx:id="passField" layoutX="150.0" layoutY="349.0" promptText="Password" />
-         </children>
-      </Pane>
-   </children>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <Pane maxHeight="650.0" maxWidth="450.0" minHeight="650.0" minWidth="450.0" prefHeight="650.0" prefWidth="450.0">
+            <children>
+                <Button fx:id="SigninButton" layoutX="199.0" layoutY="442.0" mnemonicParsing="false" onAction="#ClickSigninPageButton" text="Sign in" />
+                <TextField fx:id="UsernameField" focusTraversable="false" layoutX="150.0" layoutY="313.0" promptText="Username" />
+                <PasswordField fx:id="passField" layoutX="150.0" layoutY="349.0" promptText="Password" />
+                <Hyperlink layoutX="376.0" layoutY="37.0" onAction="#SignUpClick" text="Sign Up" />
+                <Label fx:id="WrongLabel" layoutX="150.0" layoutY="403.0" prefHeight="17.0" prefWidth="265.0" text="Label" visible="false" />
+            </children>
+        </Pane>
+    </children>
 </GridPane>

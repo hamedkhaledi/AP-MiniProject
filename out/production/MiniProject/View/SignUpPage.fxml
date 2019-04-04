@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignUpController">
+   <children>
+       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+           <children>
+               <VBox layoutX="131.0" layoutY="190.0" prefHeight="160.0" prefWidth="188.0">
+                   <children>
+                       <TextField fx:id="NewUsernameFiled" prefHeight="31.0" prefWidth="188.0" promptText="New Username" />
+                       <PasswordField fx:id="NewPasswordFiled" prefHeight="33.0" prefWidth="188.0" promptText="New Password" />
+                       <PasswordField fx:id="RepeatPasswordFiled" prefHeight="29.0" prefWidth="188.0" promptText="New Password" />
+                   </children>
+               </VBox>
+           </children>
+       </AnchorPane>
+      <MenuButton layoutX="187.0" layoutY="356.0" mnemonicParsing="false" text="your job">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#StudentClick" text="Student" />
+          <MenuItem mnemonicParsing="false" onAction="#TeacherClick" text="Teacher" />
+        </items>
+      </MenuButton>
+         <Button fx:id="SubmitButton" layoutX="204.0" layoutY="451.0" mnemonicParsing="false" onAction="#SubmitClick" text="submit" />
+         <Label fx:id="WrongLabel" contentDisplay="CENTER" layoutX="137.0" layoutY="411.0" prefHeight="17.0" prefWidth="305.0" text="Label" textOverrun="WORD_ELLIPSIS" underline="true" visible="false" wrapText="true" />
+   </children>
+</AnchorPane>

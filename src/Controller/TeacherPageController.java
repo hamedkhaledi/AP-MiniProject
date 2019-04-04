@@ -29,24 +29,25 @@ public class TeacherPageController {
      * Profile Submit
      */
     public void SubmitClick(ActionEvent actionEvent) throws Exception {
-        if (NewUsernameFiled.getText().isEmpty()) {
-            WrongLabel.setText("Fill all items");
-            WrongLabel.setVisible(true);
-        } else if (!Admin.getAdmin().UserName.equals(PreviousUsernameFiled.getText()) && !Admin.getAdmin().Password.equals(PreviousPasswordFiled.getText())) {
-            WrongLabel.setText("Password Or Username does`nt match");
-            WrongLabel.setVisible(true);
-        } else if (NewPasswordFiled.getText().length() < 6) {
-            WrongLabel.setText("Password must be 6 character at least");
-            WrongLabel.setVisible(true);
-        } else if (!NewPasswordFiled.getText().equals(RepeatPasswordFiled.getText())) {
-            WrongLabel.setText("Passwords do not equal");
-            WrongLabel.setVisible(true);
-        } else {
-            Admin.getAdmin().UserName = NewUsernameFiled.getText();
-            Admin.getAdmin().Password = NewPasswordFiled.getText();
-            WrongLabel.setText("Changing Profile completed");
-            WrongLabel.setVisible(true);
-        }
+//        if (NewUsernameFiled.getText().isEmpty()) {
+//            WrongLabel.setText("Fill all items");
+//            WrongLabel.setVisible(true);
+//        } else if (!Admin.getAdmin().UserName.equals(PreviousUsernameFiled.getText()) && !Admin.getAdmin().Password.equals(PreviousPasswordFiled.getText())) {
+//            WrongLabel.setText("Password Or Username does`nt match");
+//            WrongLabel.setVisible(true);
+//        } else if (NewPasswordFiled.getText().length() < 6) {
+//            WrongLabel.setText("Password must be 6 character at least");
+//            WrongLabel.setVisible(true);
+//        } else if (!NewPasswordFiled.getText().equals(RepeatPasswordFiled.getText())) {
+//            WrongLabel.setText("Passwords do not equal");
+//            WrongLabel.setVisible(true);
+//        } else {
+//            Admin.getAdmin().UserName = NewUsernameFiled.getText();
+//            Admin.getAdmin().Password = NewPasswordFiled.getText();
+//            WrongLabel.setText("Changing Profile completed");
+//            WrongLabel.setVisible(true);
+//        }
+        //ToDo
     }
 
     /**

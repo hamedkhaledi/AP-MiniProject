@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controller.StudentPageController">
+    <children>
+        <TabPane prefHeight="650.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Profile">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox layoutX="131.0" layoutY="190.0" prefHeight="160.0" prefWidth="188.0">
+                                    <children>
+                                        <TextField fx:id="PreviousUsernameFiled" prefHeight="31.0" prefWidth="188.0"
+                                                   promptText="previous Username"/>
+                                        <PasswordField fx:id="PreviousPasswordFiled" prefHeight="31.0" prefWidth="188.0"
+                                                       promptText="Previous Password"/>
+                                        <TextField fx:id="NewUsernameFiled" prefHeight="31.0" prefWidth="188.0"
+                                                   promptText="New Username"/>
+                                        <PasswordField fx:id="NewPasswordFiled" prefHeight="33.0" prefWidth="188.0"
+                                                       promptText="New Password"/>
+                                        <PasswordField fx:id="RepeatPasswordFiled" prefHeight="29.0" prefWidth="188.0"
+                                                       promptText="New Password"/>
+                                    </children>
+                                </VBox>
+                                <Button fx:id="SubmitButton" layoutX="199.0" layoutY="437.0" mnemonicParsing="false"
+                                        onAction="#SubmitClick" text="submit"/>
+                                <Label fx:id="WrongLabel" layoutX="131.0" layoutY="377.0" text="Label" visible="false"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
+
