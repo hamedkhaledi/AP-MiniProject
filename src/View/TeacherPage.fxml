@@ -66,12 +66,13 @@
                         <Label fx:id="ClassWrongLabel1" layoutX="155.0" layoutY="453.0" text="Label" visible="false" />
                         <VBox layoutX="155.0" layoutY="349.0" prefHeight="75.0" prefWidth="140.0">
                            <children>
-                              <TextField fx:id="ClassField" promptText="Class" />
-                              <TextField fx:id="StudentNumberField" promptText="Class Name" />
+                              <TextField fx:id="ClassField" promptText="Class Name" />
+                              <TextField fx:id="StudentNameField" promptText="Student Name" />
                               <TextField fx:id="GradeField" promptText="grade" />
                            </children>
                         </VBox>
                         <TextArea fx:id="GradesTextArea" layoutX="125.0" layoutY="55.0" prefHeight="252.0" prefWidth="200.0" />
+                        <Button layoutX="200.0" layoutY="30.0" mnemonicParsing="false" onAction="#ShowClick" text="Show" />
                      </children>
                   </AnchorPane>
                </content>

@@ -9,4 +9,5 @@ public class Student {
     public long Inventory;
     public List<ClassRoom> Classes = new ArrayList<ClassRoom>();
     public float Average;
+    public int TeddadDarsayeNomreDar;
 }
