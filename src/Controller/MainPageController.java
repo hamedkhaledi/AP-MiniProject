@@ -22,7 +22,7 @@ public class MainPageController {
     public static boolean SignInflag = false;
 
     public void ClickSigninPageButton(ActionEvent actionEvent) throws Exception {
-        if (UsernameField.getText().equals("admin") && passField.getText().equals("admin")) {
+        if (UsernameField.getText().equals(Admin.UserName) && passField.getText().equals(Admin.Password)) {
             new PageLoader().load("../View/AdminPage.fxml");
         } else {
             for (int i = 0; i < Admin.Teachers.size(); i++) {
@@ -42,8 +42,7 @@ public class MainPageController {
                 }
             }
         }
-        if (!SignInflag)
-        {
+        if (!SignInflag) {
             WrongLabel.setVisible(true);
             WrongLabel.setText("Who Are you ? :)");
         }

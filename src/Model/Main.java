@@ -38,5 +38,6 @@ public class Main extends Application {
         TEMP2.Username = "d";
         TEMP2.Password = "d";
         Admin.Students.add(TEMP2);
+
     }
 }

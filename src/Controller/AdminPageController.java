@@ -1,9 +1,6 @@
 package Controller;
 
-import Model.Admin;
-import Model.Book;
-import Model.ClassRoom;
-import Model.Food;
+import Model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -33,7 +30,7 @@ public class AdminPageController {
         if (NewUsernameFiled.getText().isEmpty()) {
             WrongLabel.setText("Fill all items");
             WrongLabel.setVisible(true);
-        } else if (!Admin.UserName.equals(PreviousUsernameFiled.getText()) && !Admin.Password.equals(PreviousPasswordFiled.getText())) {
+        } else if (!Admin.UserName.equals(PreviousUsernameFiled.getText()) || !Admin.Password.equals(PreviousPasswordFiled.getText())) {
             WrongLabel.setText("Password Or Username does`nt match");
             WrongLabel.setVisible(true);
         } else if (NewPasswordFiled.getText().length() < 6) {
@@ -49,6 +46,10 @@ public class AdminPageController {
             WrongLabel.setVisible(true);
         }
 
+    }
+
+    public void LogOutClick(ActionEvent actionEvent) throws Exception {
+        new PageLoader().load("../View/sample.fxml");
     }
 
     @FXML

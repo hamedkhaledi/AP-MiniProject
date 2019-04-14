@@ -1,9 +1,6 @@
 package Controller;
 
-import Model.Admin;
-import Model.ClassRoom;
-import Model.Main;
-import Model.Teacher;
+import Model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -28,25 +25,29 @@ public class TeacherPageController {
      * Profile Submit
      */
     public void SubmitClick(ActionEvent actionEvent) throws Exception {
-//        if (NewUsernameFiled.getText().isEmpty()) {
-//            WrongLabel.setText("Fill all items");
-//            WrongLabel.setVisible(true);
-//        } else if (!Admin.getAdmin().UserName.equals(PreviousUsernameFiled.getText()) && !Admin.getAdmin().Password.equals(PreviousPasswordFiled.getText())) {
-//            WrongLabel.setText("Password Or Username does`nt match");
-//            WrongLabel.setVisible(true);
-//        } else if (NewPasswordFiled.getText().length() < 6) {
-//            WrongLabel.setText("Password must be 6 character at least");
-//            WrongLabel.setVisible(true);
-//        } else if (!NewPasswordFiled.getText().equals(RepeatPasswordFiled.getText())) {
-//            WrongLabel.setText("Passwords do not equal");
-//            WrongLabel.setVisible(true);
-//        } else {
-//            Admin.getAdmin().UserName = NewUsernameFiled.getText();
-//            Admin.getAdmin().Password = NewPasswordFiled.getText();
-//            WrongLabel.setText("Changing Profile completed");
-//            WrongLabel.setVisible(true);
-//        }
-        //ToDo
+        if (NewUsernameFiled.getText().isEmpty()) {
+            WrongLabel.setText("Fill all items");
+            WrongLabel.setVisible(true);
+        } else if (!Admin.Teachers.get(MainPageController.number).Username.equals(PreviousUsernameFiled.getText()) || !Admin.Teachers.get(MainPageController.number)
+                .Password.equals(PreviousPasswordFiled.getText())) {
+            WrongLabel.setText("Password Or Username does`nt match");
+            WrongLabel.setVisible(true);
+        } else if (NewPasswordFiled.getText().length() < 6) {
+            WrongLabel.setText("Password must be 6 character at least");
+            WrongLabel.setVisible(true);
+        } else if (!NewPasswordFiled.getText().equals(RepeatPasswordFiled.getText())) {
+            WrongLabel.setText("Passwords do not equal");
+            WrongLabel.setVisible(true);
+        } else {
+            Admin.Teachers.get(MainPageController.number).Username = NewUsernameFiled.getText();
+            Admin.Teachers.get(MainPageController.number).Password = NewPasswordFiled.getText();
+            WrongLabel.setText("Changing Profile completed");
+            WrongLabel.setVisible(true);
+        }
+    }
+
+    public void LogOutClick(ActionEvent actionEvent) throws Exception {
+        new PageLoader().load("../View/sample.fxml");
     }
 
     /**
@@ -188,9 +189,7 @@ public class TeacherPageController {
                 if (!flag2) {
                     ClassWrongLabel1.setText("This Student does not exist");
                     ClassWrongLabel1.setVisible(true);
-                }
-                else
-                {
+                } else {
                     ClassWrongLabel1.setText("Complete");
                     ClassWrongLabel1.setVisible(true);
                 }

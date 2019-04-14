@@ -10,4 +10,5 @@ public class Student {
     public List<ClassRoom> Classes = new ArrayList<ClassRoom>();
     public float Average;
     public int TeddadDarsayeNomreDar;
+    public int BooksNumber;
 }

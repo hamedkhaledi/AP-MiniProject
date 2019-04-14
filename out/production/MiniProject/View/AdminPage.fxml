@@ -26,6 +26,7 @@
                                 </VBox>
                                 <Button fx:id="SubmitButton" layoutX="199.0" layoutY="437.0" mnemonicParsing="false" onAction="#SubmitClick" text="submit" />
                                 <Label fx:id="WrongLabel" layoutX="131.0" layoutY="377.0" text="Label" visible="false" />
+                                <Hyperlink layoutX="347.0" layoutY="534.0" onAction="#LogOutClick" text="Log out" />
                             </children>
                         </AnchorPane>
                     </content>
@@ -45,25 +46,25 @@
                                         <TextField fx:id="SaturdayFood2" promptText="Food 2" />
                                     </children>
                                 </VBox>
-                                <VBox layoutX="185.0" layoutY="440.0" prefHeight="50.0" prefWidth="149.0">
+                                <VBox layoutX="186.0" layoutY="184.0" prefHeight="50.0" prefWidth="149.0">
                                     <children>
                                         <TextField fx:id="SundayFood1" promptText="Food 1" />
                                         <TextField fx:id="SundayFood2" promptText="Food 2" />
                                     </children>
                                 </VBox>
-                                <VBox layoutX="185.0" layoutY="355.0" prefHeight="50.0" prefWidth="149.0">
+                                <VBox layoutX="185.0" layoutY="264.0" prefHeight="50.0" prefWidth="149.0">
                                     <children>
                                         <TextField fx:id="MondayFood1" promptText="Food 1" />
                                         <TextField fx:id="MondayFood2" promptText="Food 2" />
                                     </children>
                                 </VBox>
-                                <VBox layoutX="185.0" layoutY="270.0" prefHeight="50.0" prefWidth="149.0">
+                                <VBox layoutX="186.0" layoutY="344.0" prefHeight="50.0" prefWidth="149.0">
                                     <children>
                                         <TextField fx:id="TuesdayFood1" promptText="Food 1" />
                                         <TextField fx:id="TuesdayFood2" promptText="Food 2" />
                                     </children>
                                 </VBox>
-                                <VBox layoutX="185.0" layoutY="185.0" prefHeight="50.0" prefWidth="149.0">
+                                <VBox layoutX="185.0" layoutY="424.0" prefHeight="50.0" prefWidth="149.0">
                                     <children>
                                         <TextField fx:id="WednesdayFood1" promptText="Food 1" />
                                         <TextField fx:id="WednesdayFood2" promptText="Food 2" />
