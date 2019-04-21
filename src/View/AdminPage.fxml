@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="650.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminPageController">
+<AnchorPane prefHeight="650.0" prefWidth="450.0" stylesheets="@css/Adminpage.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminPageController">
     <children>
         <TabPane prefHeight="650.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
@@ -17,7 +19,7 @@
                             <children>
                                 <VBox layoutX="131.0" layoutY="190.0" prefHeight="160.0" prefWidth="188.0">
                                     <children>
-                                        <TextField fx:id="PreviousUsernameFiled" prefHeight="31.0" prefWidth="188.0" promptText="previous Username" />
+                                        <TextField fx:id="PreviousUsernameFiled" prefHeight="31.0" prefWidth="188.0" promptText="Previous Username" />
                                         <PasswordField fx:id="PreviousPasswordFiled" prefHeight="31.0" prefWidth="188.0" promptText="Previous Password" />
                                         <TextField fx:id="NewUsernameFiled" prefHeight="31.0" prefWidth="188.0" promptText="New Usrename" />
                                         <PasswordField fx:id="NewPasswordFiled" prefHeight="33.0" prefWidth="188.0" promptText="New Password" />
@@ -26,14 +28,14 @@
                                 </VBox>
                                 <Button fx:id="SubmitButton" layoutX="199.0" layoutY="437.0" mnemonicParsing="false" onAction="#SubmitClick" text="submit" />
                                 <Label fx:id="WrongLabel" layoutX="131.0" layoutY="377.0" text="Label" visible="false" />
-                                <Hyperlink layoutX="347.0" layoutY="534.0" onAction="#LogOutClick" text="Log out" />
+                                <Hyperlink layoutX="347.0" layoutY="534.0" onAction="#LogOutClick" text="Log out" underline="true" />
                             </children>
                         </AnchorPane>
                     </content>
                 </Tab>
                 <Tab text="Dining">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@css/Adminpage.css">
                             <children>
                                 <Label layoutX="100.0" layoutY="120.0" text="Saturday" />
                                 <Label layoutX="100.0" layoutY="200.0" text="Sunday" />
@@ -70,8 +72,8 @@
                                         <TextField fx:id="WednesdayFood2" promptText="Food 2" />
                                     </children>
                                 </VBox>
-                                <Button layoutX="233.0" layoutY="551.0" mnemonicParsing="false" onAction="#DiningSubmitClick" text="Submit" underline="true" />
-                                <Label fx:id="DiningLabel" layoutX="106.0" layoutY="517.0" text="Label" visible="false" />
+                                <Button layoutX="211.0" layoutY="548.0" mnemonicParsing="false" onAction="#DiningSubmitClick" text="Submit" underline="true" />
+                                <Label fx:id="DiningLabel" layoutX="107.0" layoutY="506.0" text="Label" visible="false" />
                             </children>
                         </AnchorPane>
                     </content>
@@ -101,7 +103,10 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TextArea fx:id="UniversityTextArea" layoutX="99.0" layoutY="38.0" prefHeight="446.0" prefWidth="253.0" />
+                        <TextArea fx:id="UniversityTextArea" layoutX="99.0" layoutY="38.0" prefHeight="446.0" prefWidth="253.0">
+                           <effect>
+                              <Reflection bottomOpacity="0.05" topOpacity="0.44" />
+                           </effect></TextArea>
                         <Button layoutX="203.0" layoutY="535.0" mnemonicParsing="false" onAction="#ShowButtonClick" text="Show" />
                      </children></AnchorPane>
                </content>

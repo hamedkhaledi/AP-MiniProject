@@ -22,6 +22,7 @@ public class MainPageController {
     public static boolean SignInflag = false;
 
     public void ClickSigninPageButton(ActionEvent actionEvent) throws Exception {
+        SignInflag = false;
         if (UsernameField.getText().equals(Admin.UserName) && passField.getText().equals(Admin.Password)) {
             new PageLoader().load("../View/AdminPage.fxml");
         } else {

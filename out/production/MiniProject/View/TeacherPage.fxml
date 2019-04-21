@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="650.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TeacherPageController">
+<AnchorPane prefHeight="650.0" prefWidth="450.0" stylesheets="@css/TeacherPage.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.TeacherPageController">
     <children>
         <TabPane prefHeight="650.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
@@ -16,14 +18,14 @@
                             <children>
                                 <VBox layoutX="131.0" layoutY="190.0" prefHeight="160.0" prefWidth="188.0">
                                     <children>
-                                        <TextField fx:id="PreviousUsernameFiled" prefHeight="31.0" prefWidth="188.0" promptText="previous Username" />
+                                        <TextField fx:id="PreviousUsernameFiled" prefHeight="31.0" prefWidth="188.0" promptText="Previous Username" />
                                         <PasswordField fx:id="PreviousPasswordFiled" prefHeight="31.0" prefWidth="188.0" promptText="Previous Password" />
                                         <TextField fx:id="NewUsernameFiled" prefHeight="31.0" prefWidth="188.0" promptText="New Username" />
                                         <PasswordField fx:id="NewPasswordFiled" prefHeight="33.0" prefWidth="188.0" promptText="New Password" />
                                         <PasswordField fx:id="RepeatPasswordFiled" prefHeight="29.0" prefWidth="188.0" promptText="New Password" />
                                     </children>
                                 </VBox>
-                                <Button fx:id="SubmitButton" layoutX="199.0" layoutY="437.0" mnemonicParsing="false" onAction="#SubmitClick" text="submit" />
+                                <Button fx:id="SubmitButton" layoutX="199.0" layoutY="437.0" mnemonicParsing="false" mouseTransparent="true" onAction="#SubmitClick" text="submit" />
                                 <Label fx:id="WrongLabel" layoutX="131.0" layoutY="377.0" text="Label" visible="false" />
                                 <Hyperlink layoutX="347.0" layoutY="534.0" onAction="#LogOutClick" text="Log out" />
                             </children>
@@ -72,8 +74,11 @@
                               <TextField fx:id="GradeField" promptText="grade" />
                            </children>
                         </VBox>
-                        <TextArea fx:id="GradesTextArea" layoutX="125.0" layoutY="55.0" prefHeight="252.0" prefWidth="200.0" />
-                        <Button layoutX="200.0" layoutY="30.0" mnemonicParsing="false" onAction="#ShowClick" text="Show" />
+                        <TextArea fx:id="GradesTextArea" layoutX="125.0" layoutY="55.0" prefHeight="252.0" prefWidth="200.0">
+                           <effect>
+                              <Reflection />
+                           </effect></TextArea>
+                        <Button layoutX="199.0" layoutY="26.0" mnemonicParsing="false" onAction="#ShowClick" text="Show" />
                      </children>
                   </AnchorPane>
                </content>

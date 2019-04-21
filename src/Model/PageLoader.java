@@ -14,7 +14,7 @@ public class PageLoader {
         stage = primaryStage;
         stage.setResizable(false);
         stage.setWidth(450);
-        stage.setHeight(700);
+        stage.setHeight(670);
 
     }
 

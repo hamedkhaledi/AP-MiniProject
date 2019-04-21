@@ -1,10 +1,13 @@
 package Controller;
 
 import Model.*;
+import javafx.animation.PathTransition;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.shape.Line;
+import javafx.util.Duration;
 
 import java.security.cert.CRLReason;
 
@@ -29,7 +32,7 @@ public class StudentPageController {
     /**
      * Profile Submit
      */
-    public void SubmitClick(ActionEvent actionEvent) throws Exception {
+    public void SubmitClick(ActionEvent actionEvent) {
         if (NewUsernameFiled.getText().isEmpty()) {
             WrongLabel.setText("Fill all items");
             WrongLabel.setVisible(true);
@@ -57,8 +60,6 @@ public class StudentPageController {
 
     /**
      * increase money
-     *
-     * @param actionEvent
      */
     @FXML
     public TextField CardNumberFiled;
@@ -111,6 +112,7 @@ public class StudentPageController {
     public RadioButton Food42;
     public RadioButton Food51;
     public RadioButton Food52;
+    public Line DiningLine;
     //
     public int SumPrice = 2500;
 
@@ -141,6 +143,11 @@ public class StudentPageController {
     }
 
     public void DiningClick(Event event) {
+        PathTransition pathTransition = new PathTransition();
+        pathTransition.setNode(CreditLabel);
+        pathTransition.setDuration(Duration.seconds(3));
+        pathTransition.setPath(DiningLine);
+        pathTransition.play();
         CreditLabel.setText("Your Credit : " + Admin.Students.get(MainPageController.number).Inventory);
         Food11.setText(Food.Food1Array[0]);
         Food21.setText(Food.Food1Array[1]);
@@ -169,7 +176,7 @@ public class StudentPageController {
             LibraryWrongLabel.setText("You cant reserve any more book");
         } else {
             boolean flag = false;
-            int i = 0;
+            int i;
             for (i = 0; i < Book.Books.size(); i++) {
                 if (Book.Books.get(i).Name.equalsIgnoreCase(BookNameFiled.getText())) {
                     flag = true;

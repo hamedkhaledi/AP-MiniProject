@@ -83,4 +83,8 @@ public class SignUpController {
     public void TeacherClick(ActionEvent actionEvent) {
         job = "Teacher";
     }
+
+    public void BackClick(ActionEvent actionEvent) throws Exception {
+        new PageLoader().load("../View/sample.fxml");
+    }
 }
